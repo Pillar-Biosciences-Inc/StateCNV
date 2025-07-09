@@ -2,3 +2,4 @@ numpy
 particles
 scipy
 matplotlib
+flake8
