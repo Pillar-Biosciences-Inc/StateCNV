@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cnvbayesprofiler"
+version = "0.1.0"
+description = "Bayesian state-space model for CNV classification from targeted sequencing"
+authors = [
+    { name="Your Name", email="your.email@example.com" }
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "particles"
+]
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/CNVBayesProfiler"
+
