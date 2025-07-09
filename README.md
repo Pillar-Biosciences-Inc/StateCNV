@@ -4,13 +4,43 @@
 
 ## Summary
 
-This paper introduces a probabilistic framework for accurately classifying copy number variation (CNV) profiles in genetic disorders, with a focus on thalassemia. Using targeted amplicon sequencing data, the method applies a state-space model to account for spatial dependencies between genomic regions and leverages auxiliary particle filtering to detect abrupt CNV transitions. Bayesian decision theory is then used to assign each sample to a predefined CNV profile, and Bayesian evidence is employed to flag low-quality samples. The approach achieves high sensitivity and specificity for thalassemia classification and is broadly applicable to other CNV-driven disorders, including BRCA-related mutations.
+This repository provides a full implementation of the method described in the paper:
 
-## Paper Link
+> *"Classifying Copy Number Variations Using State Space Modeling of Targeted Sequencing Data: A Case Study in Thalassemia"*
 
-[https://arxiv.org/abs/2504.10338](https://arxiv.org/abs/2504.10338)
+We introduce a probabilistic framework for detecting and classifying copy number variation (CNV) profiles from targeted amplicon sequencing data. The method combines state-space modeling, auxiliary particle filtering, and Bayesian decision theory to robustly estimate copy number ratios, assign genetic profiles (e.g., thalassemia subtypes), and detect low-quality clinical samples using Bayesian evidence.
 
-## Sample Quality Assessment Figure
+📄 **Paper:** [https://arxiv.org/abs/2504.10338](https://arxiv.org/abs/2504.10338)
 
-![Sample Quality Assessment](SampleQuality_newGuide.png)
+---
+
+## Features
+
+- Accurate CNV estimation from targeted sequencing (amplicon-level resolution)
+- State-space model with Laplace likelihood and change-point detection
+- Auxiliary particle filtering for robust inference
+- Bayesian profile assignment with built-in priors
+- Automated sample quality control via Bayesian evidence
+- Includes unit tests and reproducible demo scripts
+
+---
+
+## Installation
+
+### 🔧 Requirements
+
+- Python ≥ 3.8
+- NumPy, SciPy, pandas, matplotlib
+- `pytest` (for testing)
+- particles
+
+You can install everything using pip:
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/CNVBayesProfiler.git
+cd CNVBayesProfiler
+
+# Install dependencies and the package
+pip install -e .
 
