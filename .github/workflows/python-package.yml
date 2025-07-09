@@ -1,4 +1,4 @@
-name: Test StateCNV
+name: CI - Lint and Test StateCNV
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     strategy:
@@ -15,7 +15,7 @@ jobs:
         python-version: [3.9, 3.10, 3.11, 3.12]
 
     steps:
-    - name: Check out repository
+    - name: Checkout repository
       uses: actions/checkout@v3
 
     - name: Set up Python ${{ matrix.python-version }}
@@ -28,15 +28,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install .
-        pip install pytest
+        pip install pytest flake8
 
     - name: Lint with flake8
       run: |
-        # Stop the build if there are Python syntax errors or undefined names
+        # Fail on critical errors (e.g., syntax)
         flake8 cnvbayesprofiler tests --count --select=E9,F63,F7,F82 --show-source --statistics
-        # Show style violations (optional)
+        # Report style warnings but do not fail
         flake8 cnvbayesprofiler tests --count --exit-zero --max-complexity=10 --max-line-length=100 --statistics
-
 
     - name: Run tests
       run: |
