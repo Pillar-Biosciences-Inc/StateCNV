@@ -38,5 +38,6 @@ jobs:
 
     - name: Run tests
       run: |
-        PYTHONPATH=$(pwd)/statecnv pytest tests/
+        PYTHONPATH=. pytest tests/
+      
 
