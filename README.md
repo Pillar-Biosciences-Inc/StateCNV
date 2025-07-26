@@ -44,3 +44,6 @@ cd CNVBayesProfiler
 # Install dependencies and the package
 pip install -e .
 
+<p align="center">
+  <img src="assets/statecnv_logo.png" alt="StateCNV logo" width="400"/>
+</p>
