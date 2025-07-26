@@ -1,7 +1,7 @@
 # test_state_cnv.py
 
 import pytest
-import state_cnv
+import statecnv.state_cnv as state_cnv
 import inspect
 
 def get_callable_functions(module):
