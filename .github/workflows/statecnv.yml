@@ -38,5 +38,5 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest tests/
+        PYTHONPATH=$(pwd) pytest tests/
 
