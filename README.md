@@ -1,3 +1,5 @@
+![StateCNV logo](assets/statecnv_logo.png)
+
 # StateCNV
 
 **A Bayesian State-Space Method for Copy Number Variation Detection and Thalassemia Profiling**
@@ -43,7 +45,5 @@ cd CNVBayesProfiler
 
 # Install dependencies and the package
 pip install -e .
+```
 
-<p align="center">
-  <img src="assets/statecnv_logo.png" alt="StateCNV logo" width="400"/>
-</p>
