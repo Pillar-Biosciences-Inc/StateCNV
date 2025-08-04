@@ -96,18 +96,18 @@ class BootstrapSampling:
         self.resampling = resampling
         self.ESSrmin = ESSrmin
 
-    def fit_call(self, cancer, normal, control_amplicon_indices):
+    def fit_call(self, sample, normal, control_amplicon_indices):
         n_regions = len(np.unique(self.region_labels))
         list_of_contiguous_segments_sample = []
         list_of_contiguous_segments_normal = []
         for i in range(n_regions):
             list_of_contiguous_segments_sample.append(
-                cancer[self.region_labels == i]
+                sample[self.region_labels == i]
             )
             list_of_contiguous_segments_normal.append(
                 normal[self.region_labels == i]
             )
-        control_sample = cancer[control_amplicon_indices]
+        control_sample = sample[control_amplicon_indices]
         control_normal = normal[control_amplicon_indices]
 
         self._sample_latent_space(
