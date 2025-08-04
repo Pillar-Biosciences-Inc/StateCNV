@@ -40,10 +40,12 @@ You can install everything using pip:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/CNVBayesProfiler.git
-cd CNVBayesProfiler
+git clone https://github.com/Pillar-Biosciences-Inc/StateCNV.git
+cd StateCNV
 
 # Install dependencies and the package
+conda create -n statecnv python=3.11
+conda activate statecnv
 pip install -e .
 ```
 
